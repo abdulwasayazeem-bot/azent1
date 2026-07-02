@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us – Azeem Enterprises</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.contact-main { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+.contact-info h3 { font-family:'Barlow Condensed',sans-serif; font-size:1.3rem; font-weight:800; color:var(--navy); margin-bottom:24px; }
+.ci-item { display:flex; gap:16px; margin-bottom:28px; align-items:flex-start; }
+.ci-icon { width:46px; height:46px; border-radius:var(--radius); background:#fff7ec; border:1px solid #fde8bc; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.ci-text strong { display:block; font-size:.82rem; font-weight:700; color:var(--navy); margin-bottom:3px; text-transform:uppercase; letter-spacing:.5px; }
+.ci-text span, .ci-text a { font-size:.9rem; color:var(--muted); text-decoration:none; line-height:1.6; display:block; }
+.ci-text a:hover { color:var(--accent); }
+.contact-socials { margin-top:32px; }
+.contact-socials h4 { font-size:.8rem; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px; }
+.social-row { display:flex; gap:10px; }
+.soc-btn { display:flex; align-items:center; gap:8px; padding:9px 16px; border-radius:var(--radius); border:1px solid var(--mid); font-size:.82rem; font-weight:600; color:var(--navy); text-decoration:none; transition:all .2s; background:var(--light); }
+.soc-btn:hover { background:var(--accent); border-color:var(--accent); color:var(--navy); }
+.contact-form-wrap { background:var(--light); border-radius:var(--radius); padding:36px 32px; border:1px solid var(--mid); }
+.contact-form-wrap h3 { font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:800; color:var(--navy); margin-bottom:6px; }
+.contact-form-wrap p { font-size:.85rem; color:var(--muted); margin-bottom:28px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { margin-bottom:18px; }
+.form-group label { display:block; font-size:.8rem; font-weight:600; color:var(--navy); margin-bottom:6px; text-transform:uppercase; letter-spacing:.5px; }
+.form-group input, .form-group select, .form-group textarea { width:100%; padding:12px 16px; border:1.5px solid var(--mid); border-radius:var(--radius); font-size:.9rem; color:var(--text); background:var(--white); font-family:'Inter',sans-serif; outline:none; transition:border-color .2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--accent); }
+.form-group textarea { resize:vertical; min-height:130px; }
+.form-submit { width:100%; background:var(--accent); color:var(--navy); font-weight:700; font-size:1rem; padding:14px; border-radius:var(--radius); border:none; cursor:pointer; transition:background .2s; font-family:'Inter',sans-serif; }
+.form-submit:hover { background:var(--accent2); }
+.map-section { background:var(--light); padding:0; }
+.map-wrap { width:100%; height:380px; background:var(--steel); position:relative; overflow:hidden; }
+.map-wrap iframe { width:100%; height:100%; border:none; }
+.map-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; }
+.map-placeholder .mp-icon { font-size:3rem; }
+.map-placeholder p { color:#afc4d8; font-size:.9rem; }
+@media(max-width:900px){ .contact-grid{grid-template-columns:1fr; gap:36px;} .form-row{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact Us</span></div>
+    <h1>Get in <em>Touch</em></h1>
+    <p>Have a question, need a quote, or want to discuss your material requirements? Our team is ready to help. Reach out and we'll respond promptly.</p>
+  </div>
+</div>
+
+<section class="contact-main">
+  <div class="section-inner">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="ci-item">
+          <div class="ci-icon">📞</div>
+          <div class="ci-text">
+            <strong>Phone</strong>
+            <a href="tel:+92213xxxxxxx">021-3XXXXXXX</a>
+            <a href="tel:+923xxxxxxxxx">0300-XXXXXXX</a>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">✉️</div>
+          <div class="ci-text">
+            <strong>Email</strong>
+            <a href="mailto:info@azeementerprises.com">info@azeementerprises.com</a>
+            <a href="mailto:sales@azeementerprises.com">sales@azeementerprises.com</a>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-text">
+            <strong>Office Address</strong>
+            <span>Azeem Enterprises<br/>Karachi, Pakistan</span>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">🕐</div>
+          <div class="ci-text">
+            <strong>Business Hours</strong>
+            <span>Monday – Saturday: 9:00 AM – 6:00 PM<br/>Sunday: Closed</span>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">💬</div>
+          <div class="ci-text">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/923xxxxxxxxx" target="_blank">Chat with us on WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact-socials">
+          <h4>Follow Us</h4>
+          <div class="social-row">
+            <a href="#" class="soc-btn">in LinkedIn</a>
+            <a href="#" class="soc-btn">📘 Facebook</a>
+            <a href="#" class="soc-btn">📷 Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3>Send Us a Message</h3>
+        <p>Fill in the form below and our team will get back to you within one business day.</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Your full name" required/></div>
+            <div class="form-group"><label>Company Name</label><input type="text" placeholder="Your company"/></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email Address *</label><input type="email" placeholder="your@email.com" required/></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="03XX-XXXXXXX"/></div>
+          </div>
+          <div class="form-group">
+            <label>Product of Interest</label>
+            <select>
+              <option value="">Select a product...</option>
+              <option>Transparent Soft PVC Film</option>
+              <option>Non Woven Spunbond Fabric</option>
+              <option>PVC / PU Synthetic Leather</option>
+              <option>Cling Film</option>
+              <option>Stretch Film</option>
+              <option>Polyfill (Wadding)</option>
+              <option>Zippers</option>
+              <option>EVA Film</option>
+              <option>Laminated Non Woven Fabric</option>
+              <option>PVC Rigid Film</option>
+              <option>Home Textile</option>
+              <option>Printed &amp; Embossed PVC Films</option>
+              <option>PVC Vinyl Flooring</option>
+              <option>Bubble Wrap</option>
+              <option>PVC Flex Vinyl (Panaflex)</option>
+              <option>Multiple Products</option>
+              <option>Other / General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea placeholder="Describe your requirements — quantity, specifications, timeline, or any other details..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="map-section">
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231858.77791738615!2d66.99411025!3d24.8607343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1718000000000!5m2!1sen!2s" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script>
+injectLayout('contact');
+function handleSubmit(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '✓ Message Sent! We\'ll be in touch soon.';
+  btn.style.background = '#16a34a';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>

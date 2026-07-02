@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Azeem Enterprises – One Stop Solution for All Your Packaging Needs</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ── HERO SLIDER ── */
+.hero { position: relative; overflow: hidden; }
+.slides { display: flex; transition: transform .65s cubic-bezier(.4,0,.2,1); }
+.slide { min-width: 100%; background: var(--navy); min-height: 540px; display: flex; align-items: center; position: relative; overflow: hidden; padding: 70px 24px; }
+.slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+.slide-overlay { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(13,27,42,.93) 0%, rgba(13,27,42,.7) 55%, rgba(13,27,42,.35) 100%); z-index: 1; }
+.slide-content { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; width: 100%; }
+.slide-eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.slide h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; color: var(--white); line-height: 1.08; margin-bottom: 18px; max-width: 700px; }
+.slide h1 em { color: var(--accent); font-style: normal; }
+.slide p { font-size: 1rem; color: #c8d8e8; max-width: 520px; line-height: 1.75; margin-bottom: 20px; }
+.slide-specs { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+.spec-pill { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 4px; padding: 8px 16px; font-size: .78rem; color: #d0e4f5; }
+.spec-pill strong { color: var(--accent); display: block; font-size: .92rem; font-weight: 700; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-outline-white { border: 2px solid rgba(255,255,255,.5); color: var(--white); font-weight: 600; font-size: .9rem; padding: 11px 26px; border-radius: var(--radius); text-decoration: none; transition: all .2s; display: inline-block; }
+.btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+.slider-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.35); cursor: pointer; border: none; transition: all .3s; }
+.dot.active { background: var(--accent); transform: scale(1.25); }
+.slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: white; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: background .2s; font-size: 1.2rem; }
+.slider-arrow:hover { background: var(--accent); color: var(--navy); }
+.arrow-prev { left: 22px; }
+.arrow-next { right: 22px; }
+
+/* ── PRODUCTS SECTION ── */
+.products-section { background: var(--light); }
+.products-grid-home { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+.pc { background: var(--white); border: 1px solid var(--mid); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; text-decoration: none; color: inherit; display: block; }
+.pc:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.12); }
+.pc-img { height: 210px; overflow: hidden; background: var(--steel); position: relative; }
+.pc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.pc:hover .pc-img img { transform: scale(1.06); }
+.pc-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,27,42,.55) 0%, transparent 55%); }
+.pc-badge { position: absolute; top: 12px; left: 12px; background: var(--accent); color: var(--navy); font-size: .62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 9px; border-radius: 3px; }
+.pc-body { padding: 18px 20px 20px; }
+.pc-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.18rem; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
+.pc-body p { font-size: .82rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.pc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.pc-arrow { font-size: .82rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 5px; }
+
+/* ── ABOUT STRIP ── */
+.about-strip { background: var(--white); }
+.about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.about-visual { background: var(--navy); border-radius: var(--radius); padding: 44px 32px; position: relative; overflow: hidden; }
+.about-visual::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; background: var(--accent); opacity: .07; border-radius: 50%; }
+.about-visual::after { content: ''; position: absolute; bottom: -70px; left: -70px; width: 280px; height: 280px; background: var(--steel); opacity: .5; border-radius: 50%; }
+.about-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; z-index: 1; }
+.asb { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 22px 16px; text-align: center; }
+.asb .num { font-family: 'Barlow Condensed', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.asb .lbl { font-size: .77rem; color: #afc4d8; margin-top: 4px; }
+.about-text p { font-size: .95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+.values-list { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.values-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text); line-height: 1.55; }
+.values-list li::before { content: '✦'; color: var(--accent); font-size: .8rem; margin-top: 3px; flex-shrink: 0; }
+.about-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+/* ── INDUSTRIES ── */
+.ind-section { background: var(--navy); }
+.ind-section .section-title { color: var(--white); }
+.ind-section .section-subtitle { color: #afc4d8; max-width: none; }
+.ind-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 16px; }
+.ind-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 28px 20px; text-align: center; transition: background .25s, border-color .25s, transform .25s; }
+.ind-card:hover { background: rgba(232,160,32,.1); border-color: rgba(232,160,32,.4); transform: translateY(-3px); }
+.ind-icon { font-size: 2.2rem; margin-bottom: 12px; display: block; }
+.ind-card h4 { font-size: .88rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+.ind-card p { font-size: .76rem; color: #7a9ab8; line-height: 1.5; }
+
+/* ── WHY US ── */
+.why-section { background: var(--light); }
+
+/* ── CERTS ── */
+.cert-section { background: var(--white); }
+
+@media (max-width: 900px) {
+  .about-split { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .slide { min-height: 440px; }
+  .slide h1 { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <div class="slides" id="slides">
+
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Stretch-Film.webp')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">Trusted Since 1990 · Karachi, Pakistan</div>
+        <h1>Your <em>One Stop</em> Solution for All Packaging Needs</h1>
+        <p>Azeem Enterprises supplies premium industrial films, fabrics, and materials to Pakistan's packaging, fashion, and automotive industries — for over three decades.</p>
+        <div class="hero-btns">
+          <a href="products.html" class="btn-primary">Explore Products</a>
+          <a href="contact.html" class="btn-outline-white">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Nonwoven.webp')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">Non Woven Fabrics</div>
+        <h1>Premium <em>Spunbond</em> Non Woven Fabric</h1>
+        <p>High-quality PP spunbond and laminated non woven fabrics for packaging, hygiene, agriculture, and industrial applications.</p>
+        <div class="slide-specs">
+          <div class="spec-pill"><strong>10–200 GSM</strong>Full Range</div>
+          <div class="spec-pill"><strong>96 inch</strong>Max Width</div>
+          <div class="spec-pill"><strong>Any Color</strong>On Demand</div>
+        </div>
+        <div class="hero-btns">
+          <a href="product-nonwoven.html" class="btn-primary">View Product</a>
+          <a href="contact.html" class="btn-outline-white">Request Sample</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('leather.jpeg')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">PVC / PU Synthetic Leather</div>
+        <h1>Durable <em>Synthetic Leather</em> for Every Industry</h1>
+        <p>PVC and PU synthetic leather for automotive upholstery, footwear, fashion accessories, furniture, and bags. Wide color and texture options.</p>
+        <div class="slide-specs">
+          <div class="spec-pill"><strong>PVC & PU</strong>Both Types</div>
+          <div class="spec-pill"><strong>Custom</strong>Colors & Emboss</div>
+          <div class="spec-pill"><strong>All Widths</strong>Available</div>
+        </div>
+        <div class="hero-btns">
+          <a href="product-synthetic-leather.html" class="btn-primary">View Product</a>
+          <a href="contact.html" class="btn-outline-white">Request Sample</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Air-bubble.webp')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">Protective Packaging</div>
+        <h1>Bubble Wrap, Cling Film &amp; <em>Stretch Film</em></h1>
+        <p>Complete protective packaging solutions for safe transit, pallet wrapping, and retail display. Reliable cushioning and cling performance.</p>
+        <div class="slide-specs">
+          <div class="spec-pill"><strong>10–35 Micron</strong>Stretch Film</div>
+          <div class="spec-pill"><strong>Multi-Layer</strong>Options</div>
+          <div class="spec-pill"><strong>Custom Rolls</strong>Available</div>
+        </div>
+        <div class="hero-btns">
+          <a href="products.html" class="btn-primary">View Packaging Range</a>
+          <a href="contact.html" class="btn-outline-white">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">&#8249;</button>
+  <button class="slider-arrow arrow-next" onclick="changeSlide(1)">&#8250;</button>
+  <div class="slider-dots" id="dots"></div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Years in Business</div></div>
+    <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Product Categories</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Core Industries Served</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Quality Assured</div></div>
+  </div>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<section class="products-section">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">Our Product Range</div>
+      <h2 class="section-title">Comprehensive Materials from One Single Source</h2>
+      <p class="section-subtitle">Over 15 product categories supplying the packaging, fashion, and automotive industries across Pakistan.</p>
+    </div>
+    <div class="products-grid-home">
+
+      <a href="product-nonwoven.html" class="pc">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Nonwoven.webp" alt="Non Woven Spunbond Fabric" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Fabric</span>
+        </div>
+        <div class="pc-body">
+          <h3>Non Woven Spunbond Fabric</h3>
+          <p>PP spunbond non woven in 10–200 GSM for packaging, hygiene, agriculture, and industrial uses.</p>
+          <div class="pc-tags"><span class="tag">Hygiene</span><span class="tag">Agriculture</span><span class="tag">Packaging</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-stretch-film.html" class="pc">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Stretch-Film.webp" alt="Stretch Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Packaging</span>
+        </div>
+        <div class="pc-body">
+          <h3>Stretch Film</h3>
+          <p>High-tensile stretch films for pallet wrapping, carton bundling, and industrial load securing.</p>
+          <div class="pc-tags"><span class="tag">Logistics</span><span class="tag">Warehousing</span><span class="tag">Industrial</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-polyfill.html" class="pc">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Wadding-Polyfill.webp" alt="Polyfill Wadding" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Filling</span>
+        </div>
+        <div class="pc-body">
+          <h3>Polyfill (Wadding)</h3>
+          <p>High-loft polyester filling for quilts, comforters, pillows, stuffed toys, and furniture cushioning.</p>
+          <div class="pc-tags"><span class="tag">Home Textile</span><span class="tag">Furniture</span><span class="tag">Toys</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-bubble-wrap.html" class="pc">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Air-bubble.webp" alt="Bubble Wrap" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Protective</span>
+        </div>
+        <div class="pc-body">
+          <h3>Bubble Wrap</h3>
+          <p>Protective air-cushion rolls for shock absorption and safe transit of fragile goods and electronics.</p>
+          <div class="pc-tags"><span class="tag">Electronics</span><span class="tag">Fragile</span><span class="tag">E-Commerce</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-laminated-nonwoven.html" class="pc">
+        <div class="pc-img">
+          <img src="laminated_nonwoven.jpg" alt="Laminated Non Woven" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Laminated</span>
+        </div>
+        <div class="pc-body">
+          <h3>Laminated Non Woven Fabric</h3>
+          <p>BOPP-laminated non woven for water-resistant, printable shopping bags and protective covers.</p>
+          <div class="pc-tags"><span class="tag">Bags</span><span class="tag">Retail</span><span class="tag">Covers</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="textile/index.html" class="pc">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Home-Textile.webp" alt="Home Textile" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Textile</span>
+        </div>
+        <div class="pc-body">
+          <h3>Home Textile</h3>
+          <p>Bedding, quilts, mattress protectors, pillows, sofa covers, and curtains for home and hospitality.</p>
+          <div class="pc-tags"><span class="tag">Bedding</span><span class="tag">Hospitality</span><span class="tag">Furnishing</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-pvc-film.html" class="pc">
+        <div class="pc-img">
+          <img src="soft_pvc.jpeg" alt="Transparent PVC Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">PVC Film</span>
+        </div>
+        <div class="pc-body">
+          <h3>Transparent Soft PVC Film</h3>
+          <p>Crystal-clear flexible PVC film for packaging, stationery, medical products, and garment covers.</p>
+          <div class="pc-tags"><span class="tag">Packaging</span><span class="tag">Medical</span><span class="tag">Stationery</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-synthetic-leather.html" class="pc">
+        <div class="pc-img">
+          <img src="leather.jpeg" alt="Synthetic Leather" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Leather</span>
+        </div>
+        <div class="pc-body">
+          <h3>PVC / PU Synthetic Leather</h3>
+          <p>Durable synthetic leather for automotive interiors, footwear, bags, and fashion accessories.</p>
+          <div class="pc-tags"><span class="tag">Automotive</span><span class="tag">Footwear</span><span class="tag">Fashion</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-cling-film.html" class="pc">
+        <div class="pc-img">
+          <img src="cling_film.jpeg" alt="Cling Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Packaging</span>
+        </div>
+        <div class="pc-body">
+          <h3>Cling Film</h3>
+          <p>Food-grade and industrial cling films with excellent transparency for wrapping and food preservation.</p>
+          <div class="pc-tags"><span class="tag">Food</span><span class="tag">Retail</span><span class="tag">Industrial</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-printed-pvc.html" class="pc">
+        <div class="pc-img">
+          <img src="printed_pvc.jpeg" alt="Printed Embossed PVC Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Decorative</span>
+        </div>
+        <div class="pc-body">
+          <h3>Printed &amp; Embossed PVC Films</h3>
+          <p>Decorative PVC films with custom prints and embossed textures for furniture and interior décor.</p>
+          <div class="pc-tags"><span class="tag">Furniture</span><span class="tag">Interior</span><span class="tag">Décor</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-pvc-flooring.html" class="pc">
+        <div class="pc-img">
+          <img src="flooring.webp" alt="PVC Vinyl Flooring" loading="lazy"/>
+          <div class="pc-img-overlay"></div>
+          <span class="pc-badge">Flooring</span>
+        </div>
+        <div class="pc-body">
+          <h3>PVC Vinyl Flooring</h3>
+          <p>Durable vinyl flooring for commercial, residential, and industrial spaces in a wide range of designs.</p>
+          <div class="pc-tags"><span class="tag">Commercial</span><span class="tag">Residential</span><span class="tag">Industrial</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="products.html" class="pc" style="background:var(--navy);display:flex;align-items:center;justify-content:center;text-decoration:none;min-height:300px;">
+        <div style="text-align:center;padding:32px;">
+          <div style="font-size:3rem;margin-bottom:16px;">📦</div>
+          <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:10px;">+ 4 More Products</h3>
+          <p style="font-size:.84rem;color:#afc4d8;margin-bottom:20px;">Zippers, EVA Film, PVC Rigid Film, PVC Flex Vinyl &amp; more</p>
+          <span style="background:var(--accent);color:var(--navy);font-weight:700;font-size:.85rem;padding:10px 22px;border-radius:var(--radius);display:inline-block;">View All Products →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="section-inner">
+    <div class="about-split">
+      <div class="about-visual">
+        <div class="about-stat-grid">
+          <div class="asb"><div class="num">30+</div><div class="lbl">Years of Experience</div></div>
+          <div class="asb"><div class="num">15+</div><div class="lbl">Product Categories</div></div>
+          <div class="asb"><div class="num">3</div><div class="lbl">Key Industries</div></div>
+          <div class="asb"><div class="num">PKR</div><div class="lbl">Competitive Pricing</div></div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-eyebrow">About Azeem Enterprises</div>
+        <h2 class="section-title">Pakistan's Trusted Materials Trading Partner</h2>
+        <p>Azeem Enterprises has been a dependable name in Pakistan's industrial supply landscape for over three decades. Founded with the vision of becoming a one-stop solution for businesses, we have grown into a leading trading company supplying a comprehensive range of polymer films, nonwoven fabrics, synthetic leather, packaging materials, and textile accessories.</p>
+        <p>We serve the packaging industry, fashion and garment sector, and automotive industry — providing carefully sourced, quality-assured materials that meet the exacting demands of modern manufacturing.</p>
+        <ul class="values-list">
+          <li>Consistent quality with rigorous sourcing standards across all categories</li>
+          <li>Over 30 years of market expertise and established supplier relationships</li>
+          <li>Broad product range enabling businesses to consolidate procurement</li>
+          <li>Competitive pricing tailored to local manufacturers' needs</li>
+        </ul>
+        <div class="about-btns">
+          <a href="about.html" class="btn-primary">Learn More About Us</a>
+          <a href="contact.html" class="btn-outline-dark">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind-section">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">Who We Serve</div>
+      <h2 class="section-title">Industries We Supply</h2>
+      <p class="section-subtitle">Our diverse product portfolio serves a wide spectrum of industries across Pakistan and beyond.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card"><span class="ind-icon">📦</span><h4>Packaging</h4><p>Stretch films, cling films, bubble wrap, rigid PVC for all packaging requirements.</p></div>
+      <div class="ind-card"><span class="ind-icon">👗</span><h4>Fashion &amp; Garments</h4><p>Synthetic leather, zippers, EVA film, and laminated fabrics for apparel makers.</p></div>
+      <div class="ind-card"><span class="ind-icon">🚗</span><h4>Automotive</h4><p>PVC and PU synthetic leather for car seat upholstery and interior trim.</p></div>
+      <div class="ind-card"><span class="ind-icon">🏥</span><h4>Medical &amp; Hygiene</h4><p>Non woven spunbond and soft PVC films for medical packaging and hygiene.</p></div>
+      <div class="ind-card"><span class="ind-icon">🏠</span><h4>Home Furnishing</h4><p>Polyfill, home textiles, PVC flooring, and printed films for interior décor.</p></div>
+      <div class="ind-card"><span class="ind-icon">🌾</span><h4>Agriculture</h4><p>Non woven crop covers and protective films for modern farming.</p></div>
+      <div class="ind-card"><span class="ind-icon">📢</span><h4>Advertising</h4><p>PVC flex vinyl (panaflex) for billboards, banners, and large-format print.</p></div>
+      <div class="ind-card"><span class="ind-icon">🛒</span><h4>Retail &amp; E-Commerce</h4><p>Laminated bags, bubble wrap, and protective packaging for retail logistics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">Why Choose Us</div>
+      <h2 class="section-title">The Azeem Advantage</h2>
+      <p class="section-subtitle">What makes businesses across Pakistan choose Azeem Enterprises as their preferred materials supplier.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🏆</div><h3>30+ Years of Trust</h3><p>Three decades of reliable supply and deep industry relationships mean you partner with a company that has stood the test of time and market fluctuations.</p></div>
+      <div class="why-card"><div class="why-icon">📋</div><h3>One-Stop Procurement</h3><p>From PVC films to nonwoven fabric to synthetic leather — reduce your supplier count and streamline procurement by sourcing multiple categories from one place.</p></div>
+      <div class="why-card"><div class="why-icon">✅</div><h3>Quality Assurance</h3><p>Every product we supply is carefully selected to meet industry standards. We maintain strict sourcing criteria to ensure consistency in every order.</p></div>
+      <div class="why-card"><div class="why-icon">💰</div><h3>Competitive Pricing</h3><p>Our established supply chain and volume relationships allow us to pass on genuine cost advantages to our customers across all product lines.</p></div>
+      <div class="why-card"><div class="why-icon">🚚</div><h3>Reliable Supply</h3><p>Consistent availability and dependable delivery timelines so your production lines keep running without interruption or delays.</p></div>
+      <div class="why-card"><div class="why-icon">🤝</div><h3>Dedicated Support</h3><p>Our experienced team provides technical guidance and responsive after-sales support to help you choose the right materials for your application.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="cert-section">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">Standards &amp; Compliance</div>
+      <h2 class="section-title">Our Certifications</h2>
+      <p class="section-subtitle">We uphold international quality, safety, and environmental standards across our entire supply chain.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-badge"><div class="cert-icon">🏅</div><div class="cert-name">ISO 9001</div><div class="cert-desc">Quality Management</div></div>
+      <div class="cert-badge"><div class="cert-icon">🌿</div><div class="cert-name">ISO 14001</div><div class="cert-desc">Environmental Mgmt</div></div>
+      <div class="cert-badge"><div class="cert-icon">🔬</div><div class="cert-name">FDA</div><div class="cert-desc">Food Grade Compliance</div></div>
+      <div class="cert-badge"><div class="cert-icon">⚗️</div><div class="cert-name">EPA</div><div class="cert-desc">Environmental Protection</div></div>
+      <div class="cert-badge"><div class="cert-icon">🔍</div><div class="cert-name">UKAS</div><div class="cert-desc">Accreditation Standard</div></div>
+      <div class="cert-badge"><div class="cert-icon">👟</div><div class="cert-name">SATRA</div><div class="cert-desc">Leather &amp; Footwear Testing</div></div>
+      <div class="cert-badge"><div class="cert-icon">☪️</div><div class="cert-name">HALAL</div><div class="cert-desc">Halal Certified</div></div>
+      <div class="cert-badge"><div class="cert-icon">♻️</div><div class="cert-name">OEKO-TEX</div><div class="cert-desc">Safe Textiles Standard</div></div>
+    </div>
+  </div>
+</section>
+
+<script src="components.js"></script>
+<script>injectLayout('home');</script>
+</body>
+</html>

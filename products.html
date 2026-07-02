@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Products – Azeem Enterprises</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.filter-bar { background: var(--white); border-bottom: 1px solid var(--mid); padding: 16px 24px; position: sticky; top: 70px; z-index: 100; }
+.filter-inner { max-width: 1280px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.filter-btn { background: var(--light); border: 1px solid var(--mid); color: var(--muted); font-size: .8rem; font-weight: 500; padding: 7px 16px; border-radius: 20px; cursor: pointer; transition: all .2s; }
+.filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--navy); font-weight: 700; }
+.filter-label { font-size: .78rem; font-weight: 600; color: var(--muted); margin-right: 6px; }
+.products-section { background: var(--light); }
+.products-full-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.pc { background: var(--white); border: 1px solid var(--mid); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; text-decoration: none; color: inherit; display: block; }
+.pc:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.12); }
+.pc-img { height: 210px; overflow: hidden; background: var(--steel); position: relative; }
+.pc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.pc:hover .pc-img img { transform: scale(1.06); }
+.pc-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,27,42,.55) 0%, transparent 55%); }
+.pc-badge { position: absolute; top: 12px; left: 12px; background: var(--accent); color: var(--navy); font-size: .62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 9px; border-radius: 3px; }
+.pc-body { padding: 18px 20px 20px; }
+.pc-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.18rem; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
+.pc-body p { font-size: .82rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.pc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.pc-arrow { font-size: .82rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 5px; }
+</style>
+</head>
+<body>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Products</span></div>
+    <h1>Our <em>Complete</em> Product Range</h1>
+    <p>15+ product categories covering packaging films, nonwoven fabrics, synthetic leather, flooring, textile, and more — all from one trusted source.</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" onclick="filterProducts('all',this)">All Products</button>
+    <button class="filter-btn" onclick="filterProducts('pvc',this)">PVC Films</button>
+    <button class="filter-btn" onclick="filterProducts('fabric',this)">Fabrics</button>
+    <button class="filter-btn" onclick="filterProducts('packaging',this)">Packaging</button>
+    <button class="filter-btn" onclick="filterProducts('leather',this)">Synthetic Leather</button>
+    <button class="filter-btn" onclick="filterProducts('flooring',this)">Flooring &amp; Décor</button>
+    <button class="filter-btn" onclick="filterProducts('textile',this)">Home Textile</button>
+  </div>
+</div>
+
+<section class="products-section">
+  <div class="section-inner">
+    <div class="products-full-grid" id="prodGrid">
+
+      <a href="product-pvc-film.html" class="pc" data-cat="pvc">
+        <div class="pc-img">
+          <img src="soft_pvc.jpeg" alt="Transparent Soft PVC Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">PVC Film</span>
+        </div>
+        <div class="pc-body">
+          <h3>Transparent Soft PVC Film</h3>
+          <p>Crystal-clear flexible PVC film for packaging, stationery, medical products, and garment covers. Available in multiple gauges and widths.</p>
+          <div class="pc-tags"><span class="tag">Packaging</span><span class="tag">Medical</span><span class="tag">Stationery</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-nonwoven.html" class="pc" data-cat="fabric">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Nonwoven.webp" alt="Non Woven Spunbond Fabric" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Fabric</span>
+        </div>
+        <div class="pc-body">
+          <h3>Non Woven Spunbond Fabric</h3>
+          <p>PP spunbond non woven fabric in 10–200 GSM range for packaging bags, hygiene products, agriculture covers, and industrial applications.</p>
+          <div class="pc-tags"><span class="tag">Hygiene</span><span class="tag">Agriculture</span><span class="tag">Bags</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-synthetic-leather.html" class="pc" data-cat="leather">
+        <div class="pc-img">
+          <img src="leather.jpeg" alt="PVC PU Synthetic Leather" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Leather</span>
+        </div>
+        <div class="pc-body">
+          <h3>PVC / PU Synthetic Leather</h3>
+          <p>Durable synthetic leather for automotive interiors, footwear, fashion bags, and upholstery applications. Wide color and emboss options.</p>
+          <div class="pc-tags"><span class="tag">Automotive</span><span class="tag">Footwear</span><span class="tag">Fashion</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-cling-film.html" class="pc" data-cat="packaging">
+        <div class="pc-img">
+          <img src="cling_film.jpeg" alt="Cling Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Packaging</span>
+        </div>
+        <div class="pc-body">
+          <h3>Cling Film</h3>
+          <p>Food-grade and industrial cling films with excellent transparency and superior cling performance for wrapping and preservation.</p>
+          <div class="pc-tags"><span class="tag">Food</span><span class="tag">Retail</span><span class="tag">Industrial</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-stretch-film.html" class="pc" data-cat="packaging">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Stretch-Film.webp" alt="Stretch Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Packaging</span>
+        </div>
+        <div class="pc-body">
+          <h3>Stretch Film</h3>
+          <p>High-tensile stretch films for pallet wrapping, carton bundling, and industrial load securing. 10–35 micron in multiple width options.</p>
+          <div class="pc-tags"><span class="tag">Logistics</span><span class="tag">Warehousing</span><span class="tag">Industrial</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-polyfill.html" class="pc" data-cat="textile">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Wadding-Polyfill.webp" alt="Polyfill Wadding" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Filling</span>
+        </div>
+        <div class="pc-body">
+          <h3>Polyfill (Wadding)</h3>
+          <p>High-loft polyester filling for quilts, comforters, pillows, stuffed toys, and furniture cushioning. Soft, durable, and hypoallergenic.</p>
+          <div class="pc-tags"><span class="tag">Home Textile</span><span class="tag">Furniture</span><span class="tag">Toys</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-zippers.html" class="pc" data-cat="fabric">
+        <div class="pc-img">
+          <img src="zippers.jpeg" alt="Zippers" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Accessories</span>
+        </div>
+        <div class="pc-body">
+          <h3>Zippers</h3>
+          <p>Nylon, metal, and plastic zippers for garments, bags, luggage, and upholstery. All sizes, colors, and end types available.</p>
+          <div class="pc-tags"><span class="tag">Fashion</span><span class="tag">Bags</span><span class="tag">Garments</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-eva-film.html" class="pc" data-cat="pvc">
+        <div class="pc-img">
+          <img src="eva_film.jpeg" alt="EVA Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Specialty Film</span>
+        </div>
+        <div class="pc-body">
+          <h3>EVA Film</h3>
+          <p>Ethylene Vinyl Acetate film for lamination, solar panels, footwear insoles, and packaging. Valued for flexibility and adhesive properties.</p>
+          <div class="pc-tags"><span class="tag">Lamination</span><span class="tag">Footwear</span><span class="tag">Solar</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-laminated-nonwoven.html" class="pc" data-cat="fabric">
+        <div class="pc-img">
+          <img src="laminated_nonwoven.jpg" alt="Laminated Non Woven" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Laminated</span>
+        </div>
+        <div class="pc-body">
+          <h3>Laminated Non Woven Fabric</h3>
+          <p>PP non woven laminated with BOPP film for enhanced durability, water resistance, and printability. Ideal for shopping bags and covers.</p>
+          <div class="pc-tags"><span class="tag">Bags</span><span class="tag">Covers</span><span class="tag">Retail</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-pvc-rigid.html" class="pc" data-cat="pvc">
+        <div class="pc-img">
+          <img src="pvc_rigid.jpg" alt="PVC Rigid Film" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">PVC Rigid</span>
+        </div>
+        <div class="pc-body">
+          <h3>PVC Rigid Film</h3>
+          <p>Clear and colored rigid PVC sheets for blister packaging, pharmaceutical blisters, stationery folders, and thermoformed products.</p>
+          <div class="pc-tags"><span class="tag">Pharma</span><span class="tag">Blister</span><span class="tag">Stationery</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="textile/index.html" class="pc" data-cat="textile">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Home-Textile.webp" alt="Home Textile" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Textile</span>
+        </div>
+        <div class="pc-body">
+          <h3>Home Textile</h3>
+          <p>Bedding, quilts, mattress protectors, pillows, sofa covers, and curtains for home furnishing and hospitality sectors.</p>
+          <div class="pc-tags"><span class="tag">Bedding</span><span class="tag">Hospitality</span><span class="tag">Furnishing</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-printed-pvc.html" class="pc" data-cat="pvc flooring">
+        <div class="pc-img">
+          <img src="printed_pvc.jpeg" alt="Printed Embossed PVC" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Decorative</span>
+        </div>
+        <div class="pc-body">
+          <h3>Printed &amp; Embossed PVC Films</h3>
+          <p>Decorative PVC films with custom prints, textures, and embossed patterns for furniture, wall panels, and interior décor.</p>
+          <div class="pc-tags"><span class="tag">Furniture</span><span class="tag">Interior</span><span class="tag">Décor</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-pvc-flooring.html" class="pc" data-cat="flooring">
+        <div class="pc-img">
+          <img src="flooring.webp" alt="PVC Vinyl Flooring" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Flooring</span>
+        </div>
+        <div class="pc-body">
+          <h3>PVC Vinyl Flooring &amp; Floor Material</h3>
+          <p>Durable, easy-to-clean vinyl flooring for commercial, residential, and industrial spaces in a wide range of designs.</p>
+          <div class="pc-tags"><span class="tag">Commercial</span><span class="tag">Residential</span><span class="tag">Industrial</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-bubble-wrap.html" class="pc" data-cat="packaging">
+        <div class="pc-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Air-bubble.webp" alt="Bubble Wrap" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Protective</span>
+        </div>
+        <div class="pc-body">
+          <h3>Bubble Wrap</h3>
+          <p>Protective air-cushion rolls for shock absorption and safe transit of electronics, glassware, and fragile goods.</p>
+          <div class="pc-tags"><span class="tag">Electronics</span><span class="tag">Fragile</span><span class="tag">E-Commerce</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+      <a href="product-panaflex.html" class="pc" data-cat="pvc flooring">
+        <div class="pc-img">
+          <img src="pvc_flex.jpeg" alt="PVC Flex Vinyl Panaflex" loading="lazy"/>
+          <div class="pc-img-overlay"></div><span class="pc-badge">Signage</span>
+        </div>
+        <div class="pc-body">
+          <h3>PVC Flex Vinyl (Panaflex)</h3>
+          <p>High-clarity frontlit and backlit PVC flex vinyl for billboards, signboards, banners, and large-format digital printing.</p>
+          <div class="pc-tags"><span class="tag">Signage</span><span class="tag">Advertising</span><span class="tag">Printing</span></div>
+          <div class="pc-arrow">View Details →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<script src="components.js"></script>
+<script>
+injectLayout('products');
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#prodGrid .pc').forEach(card => {
+    if (cat === 'all') { card.style.display = ''; return; }
+    const cats = (card.dataset.cat || '').split(' ');
+    card.style.display = cats.includes(cat) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

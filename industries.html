@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Industries – Azeem Enterprises</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.ind-main { background: var(--white); }
+.ind-cards-big { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 0; }
+.ind-big { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--mid); transition: box-shadow .25s, transform .25s; }
+.ind-big:hover { box-shadow: 0 16px 40px rgba(0,0,0,.11); transform: translateY(-4px); }
+.ind-big-img { height: 240px; overflow: hidden; position: relative; }
+.ind-big-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.ind-big:hover .ind-big-img img { transform: scale(1.05); }
+.ind-big-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,27,42,.7) 0%, transparent 60%); }
+.ind-big-icon { position: absolute; bottom: 18px; left: 20px; font-size: 2.5rem; }
+.ind-big-body { padding: 24px 24px 28px; }
+.ind-big-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.ind-big-body p { font-size: .87rem; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+.ind-big-products { font-size: .8rem; font-weight: 600; color: var(--steel); margin-bottom: 6px; }
+.ind-product-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.ind-pill { background: var(--light); border: 1px solid var(--mid); font-size: .72rem; color: var(--muted); padding: 4px 10px; border-radius: 20px; }
+.ind-strip { background: var(--light); padding: 72px 24px; }
+.ind-small-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 20px; }
+.ind-small { background: var(--white); border: 1px solid var(--mid); border-radius: var(--radius); padding: 28px 22px; text-align: center; transition: box-shadow .25s, transform .25s; }
+.ind-small:hover { box-shadow: 0 8px 24px rgba(0,0,0,.09); transform: translateY(-3px); }
+.ind-small-icon { font-size: 2.4rem; margin-bottom: 12px; }
+.ind-small h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.ind-small p { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+.cta-strip { background: linear-gradient(135deg, var(--steel) 0%, var(--navy) 100%); padding: 72px 24px; text-align: center; }
+.cta-strip h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--white); margin-bottom: 14px; }
+.cta-strip p { color: #afc4d8; font-size: 1rem; max-width: 520px; margin: 0 auto 32px; line-height: 1.7; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-outline-white { border: 2px solid rgba(255,255,255,.5); color: var(--white); font-weight: 600; font-size: .9rem; padding: 12px 26px; border-radius: var(--radius); text-decoration: none; transition: all .2s; display: inline-block; }
+.btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+@media(max-width:768px){ .ind-cards-big { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Industries</span></div>
+    <h1>Industries <em>We Serve</em></h1>
+    <p>Our diverse product portfolio supports manufacturers and businesses across Pakistan's key industrial sectors — from packaging and fashion to automotive and home furnishing.</p>
+  </div>
+</div>
+
+<section class="ind-main">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Core Industries</div>
+      <h2 class="section-title">Our Primary Markets</h2>
+      <p class="section-subtitle">Three decades of supply experience across Pakistan's most active manufacturing sectors.</p>
+    </div>
+    <div class="ind-cards-big">
+
+      <div class="ind-big">
+        <div class="ind-big-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Stretch-Film.webp" alt="Packaging Industry"/>
+          <div class="ind-big-img-overlay"></div>
+          <span class="ind-big-icon">📦</span>
+        </div>
+        <div class="ind-big-body">
+          <h3>Packaging Industry</h3>
+          <p>The packaging sector is our largest market. We supply a comprehensive range of films and protective materials to packaging converters, food processors, logistics companies, and retail businesses across Pakistan.</p>
+          <div class="ind-big-products">Products we supply to this industry:</div>
+          <div class="ind-product-pills">
+            <span class="ind-pill">Stretch Film</span><span class="ind-pill">Cling Film</span><span class="ind-pill">Bubble Wrap</span><span class="ind-pill">Transparent PVC Film</span><span class="ind-pill">PVC Rigid Film</span><span class="ind-pill">Laminated Non Woven</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ind-big">
+        <div class="ind-big-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Interlining-Fusing-1.webp" alt="Fashion Industry"/>
+          <div class="ind-big-img-overlay"></div>
+          <span class="ind-big-icon">👗</span>
+        </div>
+        <div class="ind-big-body">
+          <h3>Fashion &amp; Garments</h3>
+          <p>Karachi is Pakistan's fashion manufacturing hub. We supply garment makers, bag manufacturers, footwear brands, and accessory producers with the raw materials they need to create high-quality finished goods.</p>
+          <div class="ind-big-products">Products we supply to this industry:</div>
+          <div class="ind-product-pills">
+            <span class="ind-pill">PVC/PU Synthetic Leather</span><span class="ind-pill">Zippers</span><span class="ind-pill">EVA Film</span><span class="ind-pill">Non Woven Fabric</span><span class="ind-pill">Polyfill</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ind-big">
+        <div class="ind-big-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Spunlace.webp" alt="Automotive Industry"/>
+          <div class="ind-big-img-overlay"></div>
+          <span class="ind-big-icon">🚗</span>
+        </div>
+        <div class="ind-big-body">
+          <h3>Automotive Industry</h3>
+          <p>Vehicle interior manufacturers and automotive upholsterers rely on us for durable, high-quality synthetic leather and films. Our materials meet the durability and appearance standards required for automotive interiors.</p>
+          <div class="ind-big-products">Products we supply to this industry:</div>
+          <div class="ind-product-pills">
+            <span class="ind-pill">PVC Synthetic Leather</span><span class="ind-pill">PU Synthetic Leather</span><span class="ind-pill">Printed &amp; Embossed PVC</span><span class="ind-pill">EVA Film</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ind-big">
+        <div class="ind-big-img">
+          <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Home-Textile.webp" alt="Home Furnishing"/>
+          <div class="ind-big-img-overlay"></div>
+          <span class="ind-big-icon">🏠</span>
+        </div>
+        <div class="ind-big-body">
+          <h3>Home Furnishing &amp; Décor</h3>
+          <p>Interior designers, furniture manufacturers, flooring retailers, and home textile suppliers depend on our wide range of decorative and functional materials to bring their products to life.</p>
+          <div class="ind-big-products">Products we supply to this industry:</div>
+          <div class="ind-product-pills">
+            <span class="ind-pill">PVC Vinyl Flooring</span><span class="ind-pill">Printed PVC Films</span><span class="ind-pill">Home Textile</span><span class="ind-pill">Polyfill</span><span class="ind-pill">PVC Flex Vinyl</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="ind-strip">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">Additional Markets</div>
+      <h2 class="section-title">More Industries We Support</h2>
+    </div>
+    <div class="ind-small-grid">
+      <div class="ind-small"><div class="ind-small-icon">🏥</div><h4>Medical &amp; Hygiene</h4><p>Non woven spunbond and soft PVC films for surgical applications, hygiene products, and medical packaging.</p></div>
+      <div class="ind-small"><div class="ind-small-icon">🌾</div><h4>Agriculture</h4><p>Non woven crop covers, protective films, and geotextile-grade materials for modern farming operations.</p></div>
+      <div class="ind-small"><div class="ind-small-icon">📢</div><h4>Advertising &amp; Signage</h4><p>PVC flex vinyl (panaflex) for billboards, banners, shop signage, and large-format digital printing.</p></div>
+      <div class="ind-small"><div class="ind-small-icon">🛒</div><h4>Retail &amp; E-Commerce</h4><p>Laminated non woven bags, bubble wrap, cling films, and protective packaging for retail and online sellers.</p></div>
+      <div class="ind-small"><div class="ind-small-icon">🏨</div><h4>Hospitality</h4><p>Institutional home textiles, bedding, mattress protectors, and pillow fills for hotels and hospitality businesses.</p></div>
+      <div class="ind-small"><div class="ind-small-icon">🏭</div><h4>General Manufacturing</h4><p>Stretch films, bubble wrap, EVA films, and non woven materials for industrial manufacturing and assembly operations.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <h2>Serving Your Industry?</h2>
+  <p>Tell us what you need and our team will identify the right materials and specifications for your application.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-primary">Contact Our Team</a>
+    <a href="products.html" class="btn-outline-white">Browse All Products</a>
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script>injectLayout('industries');</script>
+</body>
+</html>

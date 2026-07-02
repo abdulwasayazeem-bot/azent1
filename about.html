@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us – Azeem Enterprises</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.about-main { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-bottom: 72px; }
+.about-img-block { border-radius: var(--radius); overflow: hidden; position: relative; }
+.about-img-block img { width: 100%; height: 420px; object-fit: cover; display: block; }
+.about-img-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(13,27,42,.85), transparent); padding: 28px 24px; }
+.about-img-caption { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); }
+.about-img-sub { font-size: .8rem; color: #afc4d8; margin-top: 4px; }
+.about-body p { font-size: .96rem; color: #4a5568; line-height: 1.85; margin-bottom: 18px; }
+.values-strip { background: var(--navy); padding: 72px 24px; }
+.values-strip .section-title { color: var(--white); }
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+.val-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 32px 28px; transition: background .25s, transform .25s; }
+.val-card:hover { background: rgba(232,160,32,.1); border-color: rgba(232,160,32,.35); transform: translateY(-3px); }
+.val-icon { font-size: 2.2rem; margin-bottom: 14px; }
+.val-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+.val-card p { font-size: .85rem; color: #7a9ab8; line-height: 1.7; }
+.milestones { background: var(--light); padding: 72px 24px; }
+.timeline { position: relative; max-width: 800px; margin: 48px auto 0; }
+.timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--mid); transform: translateX(-50%); }
+.tl-item { display: flex; gap: 32px; margin-bottom: 40px; position: relative; }
+.tl-item:nth-child(even) { flex-direction: row-reverse; }
+.tl-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--accent); top: 6px; }
+.tl-content { flex: 1; }
+.tl-item:nth-child(odd) .tl-content { text-align: right; padding-right: 40px; }
+.tl-item:nth-child(even) .tl-content { text-align: left; padding-left: 40px; }
+.tl-year { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 4px; }
+.tl-title { font-weight: 700; color: var(--navy); font-size: .95rem; margin-bottom: 4px; }
+.tl-desc { font-size: .83rem; color: var(--muted); line-height: 1.6; }
+.cta-strip { background: linear-gradient(135deg, var(--steel) 0%, var(--navy) 100%); padding: 72px 24px; text-align: center; }
+.cta-strip h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--white); margin-bottom: 14px; }
+.cta-strip p { color: #afc4d8; font-size: 1rem; max-width: 520px; margin: 0 auto 32px; line-height: 1.7; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-outline-white { border: 2px solid rgba(255,255,255,.5); color: var(--white); font-weight: 600; font-size: .9rem; padding: 12px 26px; border-radius: var(--radius); text-decoration: none; transition: all .2s; display: inline-block; }
+.btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } .values-grid { grid-template-columns: 1fr 1fr; } .timeline::before { left: 16px; } .tl-item, .tl-item:nth-child(even) { flex-direction: column; padding-left: 44px; } .tl-dot { left: 16px; } .tl-item:nth-child(odd) .tl-content, .tl-item:nth-child(even) .tl-content { text-align: left; padding: 0; } }
+@media (max-width: 600px) { .values-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>About Us</span></div>
+    <h1>About <em>Azeem Enterprises</em></h1>
+    <p>Over 30 years of supplying quality industrial materials to Pakistan's packaging, fashion, and automotive industries — built on trust, reliability, and expertise.</p>
+  </div>
+</div>
+
+<section class="about-main">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-block">
+        <img src="https://mundiaexport.com/wp-content/uploads/2025/10/Mundia-Home-Textile.webp" alt="Azeem Enterprises"/>
+        <div class="about-img-overlay">
+          <div class="about-img-caption">Azeem Enterprises</div>
+          <div class="about-img-sub">Karachi, Pakistan — Est. 1990</div>
+        </div>
+      </div>
+      <div class="about-body">
+        <div class="section-eyebrow">Our Story</div>
+        <h2 class="section-title">Three Decades of Trusted Supply</h2>
+        <p>Azeem Enterprises was founded in Karachi in the early 1990s with a clear purpose: to become the most reliable single-source supplier of industrial materials for Pakistan's growing manufacturing sector. What began as a focused trading operation has grown, over three decades, into a comprehensive materials supply business trusted by manufacturers across the country.</p>
+        <p>Today, we supply over 15 product categories spanning polymer films, nonwoven fabrics, synthetic leather, protective packaging, flooring materials, home textiles, and garment accessories. Our customers range from packaging converters and garment manufacturers to automotive upholsterers and interior décor businesses — all united by a common need for consistent quality and dependable supply.</p>
+        <p>Headquartered in Karachi — Pakistan's commercial hub — we are strategically positioned to serve businesses nationwide. Our deep supplier relationships and decades of market knowledge allow us to deliver competitive pricing without compromising on the quality our customers rely on.</p>
+      </div>
+    </div>
+
+    <div class="stats-bar" style="margin: 0 -24px; border-radius: 0;">
+      <div class="stats-inner">
+        <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Years in Business</div></div>
+        <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Product Categories</div></div>
+        <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Core Industries</div></div>
+        <div class="stat-item"><div class="stat-num">KHI</div><div class="stat-label">Based in Karachi</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="values-strip">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">What We Stand For</div>
+      <h2 class="section-title">Our Core Values</h2>
+    </div>
+    <div class="values-grid">
+      <div class="val-card"><div class="val-icon">🤝</div><h3>Trust &amp; Reliability</h3><p>We have built our reputation over three decades on dependable supply, honest dealings, and consistent quality. Every commitment we make is one we keep.</p></div>
+      <div class="val-card"><div class="val-icon">✅</div><h3>Quality First</h3><p>Every product in our range is carefully sourced and evaluated against strict quality criteria. We do not compromise on standards regardless of order size.</p></div>
+      <div class="val-card"><div class="val-icon">💡</div><h3>Customer Focus</h3><p>We invest in understanding each customer's specific requirements — and match them to the right materials, the right specifications, at the right price.</p></div>
+      <div class="val-card"><div class="val-icon">🌐</div><h3>Market Expertise</h3><p>Decades in the market have given us insight that goes beyond products — we understand supply chains, pricing cycles, and industry demands deeply.</p></div>
+      <div class="val-card"><div class="val-icon">🌱</div><h3>Sustainability</h3><p>We actively source and promote eco-friendly materials and work with suppliers committed to reducing environmental impact across the production chain.</p></div>
+      <div class="val-card"><div class="val-icon">🔗</div><h3>One-Stop Supply</h3><p>By offering 15+ product categories under one roof, we simplify procurement for our customers — saving time, reducing complexity, and cutting costs.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="milestones">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">Our Journey</div>
+      <h2 class="section-title">Three Decades of Growth</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">1990</div>
+          <div class="tl-title">Company Founded</div>
+          <div class="tl-desc">Azeem Enterprises established in Karachi, initially focused on supplying packaging films to local manufacturers.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">1998</div>
+          <div class="tl-title">Expanded into Nonwoven Fabrics</div>
+          <div class="tl-desc">Added PP spunbond and laminated nonwoven fabrics to the portfolio, serving Pakistan's growing hygiene and packaging sectors.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">2005</div>
+          <div class="tl-title">Synthetic Leather Range Launched</div>
+          <div class="tl-desc">Entered the automotive and fashion markets with PVC and PU synthetic leather, serving upholsterers and garment manufacturers.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">2012</div>
+          <div class="tl-title">Home Textile &amp; Flooring Added</div>
+          <div class="tl-desc">Diversified into home textile, polyfill, PVC vinyl flooring, and decorative PVC films, expanding our customer base significantly.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">2020</div>
+          <div class="tl-title">15+ Product Categories</div>
+          <div class="tl-desc">Completed our full product portfolio — 15+ categories covering packaging, fashion, automotive, and décor industries across Pakistan.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">Today</div>
+          <div class="tl-title">Trusted Nationwide Partner</div>
+          <div class="tl-desc">Serving manufacturers across Pakistan from our Karachi base — delivering quality materials, competitive pricing, and reliable supply every day.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <h2>Ready to Work Together?</h2>
+  <p>Contact our team to discuss your material requirements and get a competitive quote for your business.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-primary">Get a Quote</a>
+    <a href="products.html" class="btn-outline-white">View Our Products</a>
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script>injectLayout('about');</script>
+</body>
+</html>
